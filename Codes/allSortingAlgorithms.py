@@ -176,4 +176,17 @@ def piegeonholeSort(A):
 # 11 SHELL SORT
 # 12 COMB SORT
 # 13 GNOME SORT 
+def gnomeSort ( A ) :
+    i = 0
+    while i < len(A) :
+        if i == 0 :
+            i += 1
+        if A[i] >= A[i-1] :
+            i+= 1
+        else :
+            temp = A[i]
+            A[i] = A[i-1]
+            A[i-1] = temp
+            i -= 1
+    return A
 
