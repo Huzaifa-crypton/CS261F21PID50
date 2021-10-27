@@ -66,17 +66,32 @@ def bubbleSort(A):
                 A[i+1] = y
         j-=1
 # 05 BUCKET SORT
+def calculateDivNumber(n):   # calculates the number with which each number will be divided in bucket sort
+    tens = "1"
+    for i in range(n):
+        tens += "0"
+    return int(tens)
 def bucketSort(A):
     B=[[],[],[],[],[],[],[],[],[],[]]
+    maxi = max(A)
+    divNum = calculateDivNumber(len(str(maxi)))  # Number with which each number is going to be divided
     for i in range(len(A)):
-        B[math.floor(A[i]*10)].append(A[i])
-    return allignArray(insertionSort(B))
-def allignArray(A):
-    output = []
+        floatNum  = A[i]/divNum
+        B[math.floor(floatNum*10)].append(A[i]) # Appending numbers in their corresponding buckets
+    return allignArray(insertionBucketSort(B))
+def allignArray(A):                             # Allign and store the buckets back to original array
+    output = [] 
     for r in range(len(A)):
         for c in range(len(A[r])):
             output.append(A[r][c])
     return output
+def insertionBucketSort(A):
+    for i in range(0, len(A)):
+        row = A[i]
+        insertionSort(row)
+    return A
+A=[110, 45, 65,50, 90,602, 24, 2, 66]
+print(bucketSort(A))
 # 06 COUNTING SORT
 def countingSort(A):
     size = (max(A) - min(A)) + 1
@@ -157,6 +172,25 @@ def partition(A , low , high):
     A[i] = pivot
     return i
 # 09 HEAP SORT
+def maxHeapify(A, n, i):
+    largest = i 
+    left = 2 * i + 1     # left child
+    right = 2 * i + 2    # right child
+    if left < n and A[largest] < A[left]:
+        largest = left
+    if right < n and A[largest] < A[right]:
+        largest = right
+    if largest != i:
+        A[i], A[largest] = A[largest], A[i]
+        maxHeapify(A, n, largest)
+def heapSort(A):
+    n = len(A)
+    for i in range(n//2 - 1, -1, -1):
+        maxHeapify(A, n, i)
+    for i in range(n-1, 0, -1):
+        A[i], A[0] = A[0], A[i] 
+        maxHeapify(A, i, 0)
+    return A    
 # 10 PIGEONHOLE SORT
 def piegeonholeSort(A):
     maxi = max(A)
@@ -174,6 +208,26 @@ def piegeonholeSort(A):
             i+=1
     return A          
 # 11 SHELL SORT
+def shellSort(A):
+    n = len(A)
+    gap = n//2
+
+    while gap > 0:
+        i = 0
+        k = gap
+
+        while k < n:
+            if A[i] > A[k]:
+                A[i],A[k] = A[k],A[i]
+            i += 1
+            k += 1
+            j = i
+            while j-gap > -1:
+                if A[j-gap] > A[j]:
+                    A[j-gap],A[j] = A[j],A[j-gap]
+                j -= 1
+        gap = gap // 2
+    return A                        
 # 12 COMB SORT
 def combSort ( A ) :
     gap = len(A)
