@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Second_Window</class>
+ <widget class="QWidget" name="Second_Window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>486</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">font: 75 6pt &quot;Times New Roman&quot;;</string>
+  </property>
+  <widget class="QComboBox" name="comboBox_2">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>10</y>
+     <width>171</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>10</pointsize>
+     <weight>9</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 10pt &quot;Times New Roman&quot;;</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Executed Sorting Processes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Insertion Sort</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Selection Sort</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Merge Sort</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Bubble Sort</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Quick Sort</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Radix Sort</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Counting Sort</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Bucket Sort</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Heap Sort</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Gnome Sort</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Comb Sort</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Pigeonhole Sort</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Shell Sort</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>10</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 10pt &quot;Times New Roman&quot;;
+background-color: rgb(57, 255, 3);
+</string>
+   </property>
+   <property name="text">
+    <string>Plot</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
