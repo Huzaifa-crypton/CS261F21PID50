@@ -27,6 +27,7 @@ def mergeSort(A , a , b):
         mergeSort(A , a , mid)
         mergeSort(A , mid + 1 , b)
         merge(A , a  , mid , b)
+    return A
 def merge(A , a , mid , b):
     L = []
     R = []
@@ -65,6 +66,7 @@ def bubbleSort(A):
                 A[i] = A[i+1]
                 A[i+1] = y
         j-=1
+    return A
 # 05 BUCKET SORT
 def calculateDivNumber(n):   # calculates the number with which each number will be divided in bucket sort
     tens = "1"
@@ -79,7 +81,7 @@ def bucketSort(A):
         floatNum  = A[i]/divNum
         B[math.floor(floatNum*10)].append(A[i]) # Appending numbers in their corresponding buckets
     return allignArray(insertionBucketSort(B))
-def allignArray(A):                             # Allign and store the buckets back to original array
+def allignArray(A):                             # Align and store the buckets back to original array
     output = [] 
     for r in range(len(A)):
         for c in range(len(A[r])):
@@ -93,8 +95,46 @@ def insertionBucketSort(A):
 A=[110, 45, 65,50, 90,602, 24, 2, 66]
 print(bucketSort(A))
 # 06 COUNTING SORT
+def key(A, i):              
+    ascii = []
+    for character in A:
+        if type(character) == str:
+            ascii.append(ord(character[0]))
+        else:
+            ascii.append(ord(character))
+
+    return (ascii[i]+(-1*min(ascii)))
+def checkType(A):
+    i = 0
+    num = ""
+    while i < len(A):
+        b = ord(A[i])
+        if (ord(A[i]) >= 48 and ord(A[i]) <= 57 or ord(A[i]) == 46 ):
+            num = num+A[i]
+        else:
+            num = A
+            break
+        i+=1
+    if(i == len(A)):
+        num = int(num)
+    return num           
 def countingSort(A):
-    size = (max(A) - min(A)) + 1
+
+    ascii = []
+    for character in A:
+        type = checkType(character)
+        if type == character :
+            ascii.append(ord(character[0]))
+        else:
+            asc = 0
+            power = len(character)-1
+            for i in character:
+                a = ord(i) - 48
+                asc += a *10**(power)
+                power -= 1
+            ascii.append(asc)
+
+    size = (max(ascii) - min(ascii)) + 1
     count = []
     output = [0]*(len(A)) 
     #  Making an array of size with 0 stored at each place
@@ -159,6 +199,7 @@ def quickSort(A , low , high):
         pi = partition(A , low , high)
         quickSort(A , low , pi-1)
         quickSort(A , pi+1 , high)
+    return A
 def partition(A , low , high):
     pivot = A[high]
     i = low
@@ -192,13 +233,20 @@ def heapSort(A):
         maxHeapify(A, i, 0)
     return A    
 # 10 PIGEONHOLE SORT
-def piegeonholeSort(A):
-    maxi = max(A)
-    mini = min(A)
+def pigeonholeSort(A):         
+    ascii = []
+    for character in A:
+        type = checkType(character)
+        if type == character :
+            ascii.append(ord(character[0]))
+        else:
+            ascii.append(int(character))
+    maxi = max(ascii)
+    mini = min(ascii)
     rangeSize = maxi - mini + 1
     pHoles = [[] for j in range(rangeSize)]   
     for i in range (len(A)):
-        idx = A[i] - mini
+        idx = ascii[i] - mini
         pHoles[idx].append(A[i])
     i = 0
     for r in range(len(pHoles)):
@@ -206,7 +254,7 @@ def piegeonholeSort(A):
         for c in range(len(row)):
             A[i] = row[c]
             i+=1
-    return A          
+    return A         
 # 11 SHELL SORT
 def shellSort(A):
     n = len(A)
