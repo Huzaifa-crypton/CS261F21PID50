@@ -167,7 +167,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../.designer/backup/Icons/filter (23).png</normaloff>../../../.designer/backup/Icons/filter (23).png</iconset>
+           <normaloff>Icons/filter (23).png</normaloff>Icons/filter (23).png</iconset>
          </property>
         </item>
         <item>
@@ -176,7 +176,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../.designer/backup/Icons/sort (1).png</normaloff>../../../.designer/backup/Icons/sort (1).png</iconset>
+           <normaloff>Icons/sort (1).png</normaloff>Icons/sort (1).png</iconset>
          </property>
         </item>
        </widget>
@@ -201,6 +201,10 @@
     <property name="text">
      <string>Add column</string>
     </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Icons/icons8-add-24.png</normaloff>Icons/icons8-add-24.png</iconset>
+    </property>
    </widget>
    <widget class="QToolButton" name="deleteColumn">
     <property name="geometry">
@@ -216,7 +220,7 @@
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../.designer/backup/Icons/download.png</normaloff>../../../.designer/backup/Icons/download.png</iconset>
+      <normaloff>Icons/download.png</normaloff>Icons/download.png</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="sortBtn">
@@ -237,14 +241,16 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(85, 85, 255);</string>
+     <string notr="true">background-color: rgb(85, 85, 255);
+background-color: rgb(0, 170, 0);
+</string>
     </property>
     <property name="text">
      <string>Sort</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../.designer/backup/Icons/sort (2).png</normaloff>../../../.designer/backup/Icons/sort (2).png</iconset>
+      <normaloff>Icons/sort (2).png</normaloff>Icons/sort (2).png</iconset>
     </property>
    </widget>
    <widget class="QComboBox" name="sortType">
@@ -351,10 +357,14 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 0, 0);</string>
+     <string notr="true">background-color: rgb(218, 62, 86);</string>
     </property>
     <property name="text">
      <string>Cancel</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Icons/download.png</normaloff>Icons/download.png</iconset>
     </property>
    </widget>
   </widget>
@@ -400,22 +410,22 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(8, 170, 0);</string>
+    <string notr="true">background-color:rgb(0, 170, 0);;</string>
    </property>
    <property name="text">
     <string>Start</string>
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../.designer/backup/Icons/icons8-play-30.png</normaloff>../../../.designer/backup/Icons/icons8-play-30.png</iconset>
+     <normaloff>Icons/icons8-play-30.png</normaloff>Icons/icons8-play-30.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="pauseScrapbtn">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>130</x>
      <y>700</y>
-     <width>121</width>
+     <width>141</width>
      <height>41</height>
     </rect>
    </property>
@@ -432,7 +442,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../.designer/backup/Icons/media_play_pause_resume.png</normaloff>../../../.designer/backup/Icons/media_play_pause_resume.png</iconset>
+     <normaloff>Icons/media_play_pause_resume.png</normaloff>Icons/media_play_pause_resume.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_6">
@@ -453,22 +463,22 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 0, 0);</string>
+    <string notr="true">background-color: rgb(218, 62, 86);</string>
    </property>
    <property name="text">
     <string>Stop</string>
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../.designer/backup/Icons/stop-button.png</normaloff>../../../.designer/backup/Icons/stop-button.png</iconset>
+     <normaloff>Icons/stop-button.png</normaloff>Icons/stop-button.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_7">
    <property name="geometry">
     <rect>
-     <x>990</x>
+     <x>970</x>
      <y>700</y>
-     <width>91</width>
+     <width>111</width>
      <height>41</height>
     </rect>
    </property>
@@ -481,7 +491,7 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(85, 0, 255);
+    <string notr="true">background-color:rgb(218, 62, 86);
 border-style: outset;
 border-radius: 5px;</string>
    </property>
@@ -490,7 +500,7 @@ border-radius: 5px;</string>
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../.designer/backup/Icons/icons8-refresh-30.png</normaloff>../../../.designer/backup/Icons/icons8-refresh-30.png</iconset>
+     <normaloff>Icons/icons8-refresh-30.png</normaloff>Icons/icons8-refresh-30.png</iconset>
    </property>
   </widget>
   <widget class="QFrame" name="frame_2">
@@ -523,7 +533,7 @@ border-radius: 5px;</string>
      </property>
      <property name="icon">
       <iconset>
-       <normaloff>../../../.designer/backup/Icons/filter.png</normaloff>../../../.designer/backup/Icons/filter.png</iconset>
+       <normaloff>Icons/filter-filled-tool-symbol.png</normaloff>Icons/filter-filled-tool-symbol.png</iconset>
      </property>
     </item>
     <item>
@@ -607,7 +617,7 @@ border-radius: 5px;</string>
      </property>
      <property name="icon">
       <iconset>
-       <normaloff>../../../.designer/backup/Icons/filter.png</normaloff>../../../.designer/backup/Icons/filter.png</iconset>
+       <normaloff>Icons/filter-filled-tool-symbol.png</normaloff>Icons/filter-filled-tool-symbol.png</iconset>
      </property>
     </item>
     <item>
@@ -641,7 +651,7 @@ border-radius: 5px;</string>
      </property>
      <property name="icon">
       <iconset>
-       <normaloff>../../../.designer/backup/Icons/filter (1).png</normaloff>../../../.designer/backup/Icons/filter (1).png</iconset>
+       <normaloff>Icons/filter-filled-tool-symbol.png</normaloff>Icons/filter-filled-tool-symbol.png</iconset>
      </property>
     </item>
     <item>
@@ -670,7 +680,7 @@ border-radius: 5px;</string>
      <rect>
       <x>1000</x>
       <y>10</y>
-      <width>75</width>
+      <width>81</width>
       <height>33</height>
      </rect>
     </property>
@@ -683,14 +693,14 @@ border-radius: 5px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 255, 255);</string>
+     <string notr="true">background-color: rgb(170, 170, 127);</string>
     </property>
     <property name="text">
      <string>Search</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../.designer/backup/Icons/icons8-search.gif</normaloff>../../../.designer/backup/Icons/icons8-search.gif</iconset>
+      <normaloff>Icons/icons8-search-50.png</normaloff>Icons/icons8-search-50.png</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="addSearching">
@@ -704,6 +714,10 @@ border-radius: 5px;</string>
     </property>
     <property name="text">
      <string>Add Searching</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Icons/icons8-add-24.png</normaloff>Icons/icons8-add-24.png</iconset>
     </property>
    </widget>
    <widget class="QPlainTextEdit" name="searchArea2">
@@ -856,8 +870,8 @@ border-radius: 5px;</string>
   <widget class="QPushButton" name="plotGraphbtn">
    <property name="geometry">
     <rect>
-     <x>630</x>
-     <y>30</y>
+     <x>610</x>
+     <y>20</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -867,21 +881,21 @@ border-radius: 5px;</string>
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../.designer/backup/Icons/icons8-combo-chart-24.png</normaloff>../../../.designer/backup/Icons/icons8-combo-chart-24.png</iconset>
+     <normaloff>Icons/icons8-combo-chart-24.png</normaloff>Icons/icons8-combo-chart-24.png</iconset>
    </property>
   </widget>
   <widget class="QTableWidget" name="tableWidget_2">
    <property name="geometry">
     <rect>
-     <x>750</x>
-     <y>30</y>
-     <width>324</width>
-     <height>170</height>
+     <x>720</x>
+     <y>20</y>
+     <width>380</width>
+     <height>171</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>324</width>
+     <width>380</width>
      <height>170</height>
     </size>
    </property>
@@ -891,9 +905,15 @@ border-radius: 5px;</string>
      <height>600</height>
     </size>
    </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustToContents</enum>
+   </property>
    <property name="showGrid">
     <bool>true</bool>
    </property>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>131</number>
+   </attribute>
    <column>
     <property name="text">
      <string>Sorting Type</string>
@@ -903,6 +923,10 @@ border-radius: 5px;</string>
       <weight>75</weight>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Icons/filter (1).png</normaloff>Icons/filter (1).png</iconset>
     </property>
    </column>
    <column>
@@ -915,6 +939,10 @@ border-radius: 5px;</string>
       <bold>true</bold>
      </font>
     </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Icons/icons8-stack-24.png</normaloff>Icons/icons8-stack-24.png</iconset>
+    </property>
    </column>
    <column>
     <property name="text">
@@ -925,6 +953,10 @@ border-radius: 5px;</string>
       <weight>75</weight>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Icons/icons8-timer-48.png</normaloff>Icons/icons8-timer-48.png</iconset>
     </property>
    </column>
   </widget>
@@ -991,7 +1023,7 @@ border-radius: 5px;</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../.designer/backup/Icons/icons8-stack-24.png</normaloff>../../../.designer/backup/Icons/icons8-stack-24.png</iconset>
+      <normaloff>Icons/icons8-stack-24.png</normaloff>Icons/icons8-stack-24.png</iconset>
     </property>
    </column>
    <column>
@@ -1011,7 +1043,7 @@ border-radius: 5px;</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../.designer/backup/Icons/icons8-squared-menu-50.png</normaloff>../../../.designer/backup/Icons/icons8-squared-menu-50.png</iconset>
+      <normaloff>Icons/icons8-stack-24.png</normaloff>Icons/icons8-stack-24.png</iconset>
     </property>
    </column>
    <column>
@@ -1031,7 +1063,7 @@ border-radius: 5px;</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../.designer/backup/Icons/icons8-name-tag-24.png</normaloff>../../../.designer/backup/Icons/icons8-name-tag-24.png</iconset>
+      <normaloff>Icons/icons8-stack-24.png</normaloff>Icons/icons8-stack-24.png</iconset>
     </property>
    </column>
    <column>
@@ -1051,7 +1083,7 @@ border-radius: 5px;</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../.designer/backup/Icons/icons8-online-payment-50.png</normaloff>../../../.designer/backup/Icons/icons8-online-payment-50.png</iconset>
+      <normaloff>Icons/icons8-online-payment-50.png</normaloff>Icons/icons8-online-payment-50.png</iconset>
     </property>
    </column>
    <column>
@@ -1071,7 +1103,7 @@ border-radius: 5px;</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../.designer/backup/Icons/icons8-delivery-time-50.png</normaloff>../../../.designer/backup/Icons/icons8-delivery-time-50.png</iconset>
+      <normaloff>Icons/icons8-delivery-time-50.png</normaloff>Icons/icons8-delivery-time-50.png</iconset>
     </property>
    </column>
    <column>
@@ -1091,7 +1123,7 @@ border-radius: 5px;</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../.designer/backup/Icons/icons8-comments-50.png</normaloff>../../../.designer/backup/Icons/icons8-comments-50.png</iconset>
+      <normaloff>Icons/icons8-comments-50.png</normaloff>Icons/icons8-comments-50.png</iconset>
     </property>
    </column>
    <column>
@@ -1111,7 +1143,7 @@ border-radius: 5px;</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../.designer/backup/Icons/icons8-star-24.png</normaloff>../../../.designer/backup/Icons/icons8-star-24.png</iconset>
+      <normaloff>Icons/icons8-star-48.png</normaloff>Icons/icons8-star-48.png</iconset>
     </property>
    </column>
   </widget>

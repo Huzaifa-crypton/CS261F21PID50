@@ -1,3 +1,6 @@
+import loadCSV
+from threading import*
+import sorting
 def changeText(self):
     composite = ""
     if (self.compositeFilters.currentText()!="Composite Filters"):
@@ -10,6 +13,6 @@ def changeText(self):
         self.integerFilter.setCurrentIndex(0)
     elif (self.stringFilter.currentText()!="Filters"):
         self.searchArea1.setText(composite+self.stringFilter.currentText() +" ")
+        print(self.stringFilter.currentIndex())
         self.stringFilter.setCurrentIndex(0)
-
-        
+    

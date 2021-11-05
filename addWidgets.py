@@ -1,4 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
+import sorting
 def insertNewSortColumn(self , warea ,area ,Main_Window):
     self.sortColumn1 = QtWidgets.QComboBox(warea)
     font = QtGui.QFont()
@@ -66,14 +67,19 @@ def cancelSort(area):
         area.removeRow(i)
 def sortStart(self):
     row = self.formLayout.rowCount()
-    for i in range (0 , row):
-            cat = self.formLayout.itemAt(i , 1).widget().currentText()
-            direc = self.formLayout.itemAt(i , 0).widget().currentText()
-            typesort = self.sortType.currentText()
-            print(cat+" "+direc + " " + typesort)
-    
+    colIdx = self.sortColumn1.currentIndex()
+    sortTypeIdx = self.sortType.currentIndex()
+    sortDirection = self.sortingDirection.currentIndex()
+    sortType = self.sortType.currentText()
+    jobNumber = self.tableWidget.rowCount()
+
+    # for i in range (0 , row):
+    #         cat = self.formLayout.itemAt(i , 1).widget().currentText()
+    #         direc = self.formLayout.itemAt(i , 0).widget().currentText()
+    #         typesort = self.sortType.currentText()
+    #         print(cat+" "+direc + " " + typesort)
+    sorting.sort(self ,sortTypeIdx ,colIdx , sortDirection)
     rowPosition = self.tableWidget_2.rowCount()
-    self.tableWidget_2.insertRow(rowPosition)
-    self.tableWidget_2.setItem(rowPosition , 0 , QtWidgets.QTableWidgetItem(typesort))
-    self.tableWidget_2.setItem(rowPosition , 1 , QtWidgets.QTableWidgetItem(str(0)))
-    self.tableWidget_2.setItem(rowPosition , 2 , QtWidgets.QTableWidgetItem(str(0)))        
+    self.tableWidget_2.setItem(rowPosition-1 , 0 , QtWidgets.QTableWidgetItem(sortType))
+    self.tableWidget_2.setItem(rowPosition-1 , 1 , QtWidgets.QTableWidgetItem(str(jobNumber)))
+    

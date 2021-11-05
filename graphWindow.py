@@ -53,7 +53,7 @@ class Ui_Second_Window(object):
 
     def retranslateUi(self, Second_Window):
         _translate = QtCore.QCoreApplication.translate
-        Second_Window.setWindowTitle(_translate("Second_Window", "Form"))
+        Second_Window.setWindowTitle(_translate("Second_Window", "Plot Graph"))
         self.comboBox_2.setItemText(0, _translate("Second_Window", "Executed Sorting Processes"))
         self.comboBox_2.setItemText(1, _translate("Second_Window", "Insertion Sort"))
         self.comboBox_2.setItemText(2, _translate("Second_Window", "Selection Sort"))
