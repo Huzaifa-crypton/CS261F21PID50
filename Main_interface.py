@@ -13,11 +13,156 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import loadCSV
 from graphWindow import Ui_Second_Window
 import addWidgets
+import sorting
 from threading import*
 from PyQt5.QtCore import* 
 import changeSearchingText
 
 class Ui_Main_Window(object):
+    
+    def linearSearch ( self, columnIDX, filterIDX, searchData ) :
+        row = self.tableWidget.rowCount()
+        details = sorting.getColumnFromTable(self)
+        print(row)
+        print(columnIDX)
+        print(filterIDX)
+        print(searchData)
+    
+
+        for i in range ( 0, row ) :
+
+            if ( columnIDX == 1 or columnIDX == 2 or columnIDX == 3 or columnIDX == 4 or columnIDX == 5 or columnIDX == 6 or columnIDX == 7 ) :
+                if filterIDX == 1 :
+                    if details[columnIDX][i].find(searchData)!=-1 :
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+                elif filterIDX == 2 :
+                    if details[columnIDX][i].startswith(searchData) :
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+                elif filterIDX == 3 :
+                    if details[columnIDX][i].endswith(searchData) :
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+            
+            if ( columnIDX == 4 or columnIDX == 5 or columnIDX == 6 ) :
+                if filterIDX == 11 :
+                    print(int(details[columnIDX][i]))
+                    if ( int(details[columnIDX][i]) >= 0 and int(details[columnIDX][i]) <= 20 ) :
+                        print(int(details[columnIDX][i]))
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+                elif filterIDX == 12 :
+                    if ( int(details[columnIDX][i]) > 20 and int(details[columnIDX][i]) <= 50 ) :
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+                elif filterIDX == 13 :
+                    if ( int(details[columnIDX][i]) > 50 and int(details[columnIDX][i]) <= 100 ) :
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+                elif filterIDX == 14 :
+                    if ( int(details[columnIDX][i]) > 100 and int(details[columnIDX][i]) <= 150 ) :
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+                elif filterIDX == 15 :
+                    if ( int(details[columnIDX][i]) > 150 and int(details[columnIDX][i]) <= 200 ) :
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+                elif filterIDX == 16 :
+                    if ( int(details[columnIDX][i]) > 200 ) :
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+            if ( columnIDX == 7 ) :
+                if filterIDX == 17 :
+                    if ( float(details[columnIDX][i]) >= 0 and float(details[columnIDX][i]) <= 1 ) :
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+                elif filterIDX == 18 :
+                    if ( float(details[columnIDX][i]) > 1 and float(details[columnIDX][i]) <= 2 ) :
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+                elif filterIDX == 19 :    
+                    if ( float(details[columnIDX][i]) > 2 and float(details[columnIDX][i]) <= 3 ) :
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+                elif filterIDX == 20 :    
+                    if ( float(details[columnIDX][i]) > 3 and float(details[columnIDX][i]) <= 3.5 ) :
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+                elif filterIDX == 21 :    
+                    if ( float(details[columnIDX][i]) > 3.5 and float(details[columnIDX][i]) <= 4 ) :
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+                elif filterIDX == 22 :    
+                    if ( float(details[columnIDX][i]) > 4 and float(details[columnIDX][i]) <= 4.5 ) :
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+                elif filterIDX == 23 :    
+                    if ( float(details[columnIDX][i]) > 4.5 and float(details[columnIDX][i]) <= 5 ) :
+                        self.tableWidget.item(i, columnIDX-1).setBackground(QtGui.QColor(0,255,0))
+    
+    def findColumnidx(self) :
+        index = self.selectSearchColumn.currentIndex()
+        return index
+
+    def findFilteridx(self) :
+        self.given = self.getInputText()
+        self.givenList = self.given.split()
+        if self.givenList[0] == "contains" :
+            return 1
+        elif self.givenList[0] == "starts" and self.givenList[1] == "with" :
+            return 2
+        elif self.givenList[0] == "ends" and self.givenList[1] == "with" :
+            return 2
+        elif self.givenList[0] == "0-20" :
+            return 11
+        elif self.givenList[0] == "20-50" :
+            return 12
+        elif self.givenList[0] == "50-100" :
+            return 13
+        elif self.givenList[0] == "100-150" :
+            return 14
+        elif self.givenList[0] == "150-200" :
+            return 15
+        elif self.givenList[0] == ">200" :
+            return 16
+        elif self.givenList[0] == "0-1" :
+            return 17
+        elif self.givenList[0] == "1-2" :
+            return 18
+        elif self.givenList[0] == "2-3" :
+            return 19
+        elif self.givenList[0] == "3-3.5" :
+            return 20
+        elif self.givenList[0] == "3.5-4" :
+            return 21
+        elif self.givenList[0] == "4-4.5" :
+            return 22
+        elif self.givenList[0] == "4.5-5" :
+            return 23
+
+    def getInputText(self):
+        given = self.searchArea1.text()
+        return given
+
+    def findSearchTypeidx(self) :
+        Type = self.searchType.currentIndex()
+        return Type
+
+    def connect(self) :
+        value1 = self.findColumnidx()
+        value2 = self.findFilteridx()
+        value3 = self.findSearchTypeidx()
+        given = self.getInputText()
+        return (value1, value2, value3, given)
+
+    def get(self) :
+        self.value1, self.value2, self.value3, self.given = self.connect()
+        print (self.value1)
+        print (self.value2)
+        print (self.value3)
+        print (self.given)
+        self.givenList = self.given.split()
+        self.searchText = ""
+        IDX = self.findFilteridx()
+
+        if IDX == 1 :
+            self.searchText = self.givenList[1]
+        elif IDX == 2 :
+            self.searchText = self.givenList[2]
+        elif IDX == 3 :
+            self.searchText = self.givenList[2]
+        print (self.searchText)
+        if self.value3 == 1 :
+            self.linearSearch ( self.value1, self.value2, self.searchText )
+        elif self.value3 == 2 :
+            binarySearch ()
+
     def open_SecondWindow(self):
         self.window = QtWidgets.QWidget()
         self.ui = Ui_Second_Window()
@@ -196,7 +341,7 @@ class Ui_Main_Window(object):
         icon7.addPixmap(QtGui.QPixmap(".\\Icons/stop-button.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_6.setIcon(icon7)
         self.pushButton_6.setObjectName("pushButton_6")
-        self.pushButton_7 = QtWidgets.QPushButton(Main_Window)
+        self.pushButton_7 = QtWidgets.QPushButton(Main_Window, clicked = lambda : self.refreshGrid())
         self.pushButton_7.setGeometry(QtCore.QRect(970, 700, 111, 41))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
@@ -250,7 +395,7 @@ class Ui_Main_Window(object):
         self.compositeFilters.addItem("")
         self.compositeFilters.addItem("")
         self.compositeFilters.addItem("")
-        self.startSearch = QtWidgets.QPushButton(self.frame_2)
+        self.startSearch = QtWidgets.QPushButton(self.frame_2, clicked = lambda : self.get())
         self.startSearch.setGeometry(QtCore.QRect(1000, 10, 81, 33))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")

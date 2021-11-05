@@ -23,10 +23,7 @@ def loadDataCSV():
     # extracting each data row one by one
         i = 0
         for row in csvreader:
-            if i <= 1000:
-                rows.append(row)
-            else:
-                break
+            rows.append(row)
             i+=1
     csvfile.close()
     makeProjObjects(rows)
